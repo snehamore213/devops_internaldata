@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'cinnyabraham06/internalapp'
+        imageName = 'snehamore213/internalapp'
         dockerImage = ''
         }
     stages {
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Retrieve source from github. run npm install and npm test' 
                 git branch: 'main',
-                    url: 'https://github.com/Zinny/devops_data_svc.git'
+                    url: 'https://github.com/snehamore213/devops_internaldata.git'
                 echo 'repo files'
                 sh 'ls -a'
                 echo 'install dependencies'
@@ -81,7 +81,7 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials cinny-app-cluster --zone us-west1-b --project inlaid-stack-352300'
+                sh 'gcloud container clusters get-credentials devops-app-cluster --zone us-central-c --project inlaid-stack-352300'
                 sh "kubectl set image deployment/devops-data-svc data-svc-container=${env.imageName}:${env.BUILD_ID}"
               }
             }       
