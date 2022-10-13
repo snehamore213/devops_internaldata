@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: data-svc-container
-        image: cinnyabraham06/internalapp:v1
+        image: snehamore213/internalapp:v1
         resources:
           requests:
             memory: "32Mi"
