@@ -1,4 +1,4 @@
-# devops_data_svc
+# devops_internaldata
 
 This is nodejs sample microservice application, 
 
