@@ -1,7 +1,7 @@
 pipeline {
     agent any 
 
-    tools {nodejs "nodejs"}
+    tools {nodejs "Nodejs"}
 
     environment {
         registryCredential = 'dockerhub'
@@ -81,7 +81,7 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials devops-app-cluster --zone us-central-c --project inlaid-stack-352300'
+                sh 'gcloud container clusters get-credentials devops-capstone-cluster --zone us-central-c --project inlaid-stack-352300'
                 sh "kubectl set image deployment/devops-data-svc data-svc-container=${env.imageName}:${env.BUILD_ID}"
               }
             }       
