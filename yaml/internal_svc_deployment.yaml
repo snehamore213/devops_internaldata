@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-data-svc
+  name: internal-ui
 spec:
   selector:
     matchLabels:
@@ -12,7 +12,7 @@ spec:
         app: data-svc-deployment
     spec:
       containers:
-      - name: data-svc-container
+      - name: internal-uic
         image: snehamore213/internalapp:v1
         resources:
           requests:
