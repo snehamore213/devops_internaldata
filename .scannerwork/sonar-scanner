@@ -1,0 +1,6 @@
+projectKey=capstone
+serverUrl=http://35.188.217.149:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://35.188.217.149:9000/dashboard?id=capstone
+ceTaskId=AYGEG1Lj0FlXEK52-7Lb
+ceTaskUrl=http://35.188.217.149:9000/api/ce/task?id=AYGEG1Lj0FlXEK52-7Lb
