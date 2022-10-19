@@ -35,7 +35,11 @@ pipeline {
         script {
           def scannerHome = tool 'SonarScanner 4.0';
           withSonarQubeEnv('sonarqube') {
-            sh "${scannerHome}/bin/sonar-scanner"  
+            sh "${scannerHome}/bin/sonar-scanner \ 
+            -Dsonar.projectKey=capstone \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=http://35.188.217.149:9000 \
+            -Dsonar.login=9d03446ac6dc5e513d121deb6f3e1360bfb255f9"
           }
          }
         }
