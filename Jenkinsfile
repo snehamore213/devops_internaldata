@@ -33,7 +33,7 @@ pipeline {
         stage('SonarQube analysis') {
       steps {
         script {
-          def scannerHome = tool 'SonarScanner 4.0';
+          def scannerHome = tool 'sonarqube';
           withSonarQubeEnv('sonarqube') {
             sh "${scannerHome}/bin/sonar-scanner \ 
             -Dsonar.projectKey=capstone \
