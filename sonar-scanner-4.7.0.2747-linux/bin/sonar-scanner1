@@ -1,4 +1,4 @@
-sonar-scanner \
+
   -Dsonar.projectKey=capstone \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://35.188.217.149:9000 \
