@@ -38,7 +38,7 @@ pipeline {
       sh """/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner \
        -D sonar.login=admin \
       -D sonar.password=sonar \
-      -D sonar.projectBaseDir=/var/lib/jenkins/workspace/jenkins-sonar/ \
+      -D sonar.projectBaseDir=/var/lib/jenkins/workspace/jenkins-data-capstone/ \
         -D sonar.projectKey=capstone \
         -D sonar.sourceEncoding=UTF-8 \
         -D sonar.host.url=http://35.188.217.149:9000/"""
