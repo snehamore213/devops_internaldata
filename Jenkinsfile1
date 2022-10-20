@@ -78,7 +78,7 @@ pipeline {
             steps {
                 echo 'Get cluster credentials'
                 sh 'gcloud container clusters get-credentials devops-app-cluster --zone us-central1-c'
-                sh "kubectl set image deployment/devops-data-svc data-svc-container=${env.imageName}:${env.BUILD_ID}"
+                sh "kubectl set image deployment/internal-ui internal-uic=${env.imageName}:${env.BUILD_ID}"
               }
             }       
         stage('Remove local docker images') {
