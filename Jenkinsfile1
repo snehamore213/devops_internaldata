@@ -50,7 +50,7 @@ pipeline {
       steps {
         script {
           def qualitygate = waitForQualityGate()
-          sleep(10)
+          sleep(100)
           if (qualitygate.status != "OK") {
             waitForQualityGate abortPipeline: true
            }
