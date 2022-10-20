@@ -30,16 +30,20 @@ pipeline {
                 echo 'Testing completed'
             }
         }
-        stage('SonarQube analysis') {
-      steps {
-        script {
-          def scannerHome = tool 'sonarqube';
-          withSonarQubeEnv('sonarqube') {
-          sh "./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner"
-          }
-         }
+        stage('SonarQube Analysis') {
+    def scannerHome = tool 'sonarqube'
+      withSonarQubeEnv('sonarqube') {
+      sh "./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner1"
+      sh """/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner \
+       -D sonar.login=admin \
+      -D sonar.password=sonar \
+      -D sonar.projectBaseDir=/var/lib/jenkins/workspace/jenkins-sonar/ \
+        -D sonar.projectKey=capstone \
+        -D sonar.sourceEncoding=UTF-8 \
+        -D sonar.host.url=http://35.188.217.149:9000/"""
         }
-       }
+}
+}
        stage("Quality gate") {
       steps {
         script {
