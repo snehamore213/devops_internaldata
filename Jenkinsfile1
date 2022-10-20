@@ -31,6 +31,8 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
+       steps {
+           script {
     def scannerHome = tool 'sonarqube'
       withSonarQubeEnv('sonarqube') {
       sh "./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner1"
@@ -42,6 +44,7 @@ pipeline {
         -D sonar.sourceEncoding=UTF-8 \
         -D sonar.host.url=http://35.188.217.149:9000/"""
         }
+}
 }
 }
        stage("Quality gate") {
