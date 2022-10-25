@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: 'internal-uic'
-        image: snehamore213/internalapp
+        image: snehamore213/internalapp5
         resources:
           requests:
             memory: "32Mi"
