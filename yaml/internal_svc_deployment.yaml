@@ -12,8 +12,8 @@ spec:
         app: data-svc-deployment
     spec:
       containers:
-      - name: internal-uic
-        image: snehamore213/internalapp:v1
+      - name: 'internal-uic'
+        image: snehamore213/internalapp
         resources:
           requests:
             memory: "32Mi"
